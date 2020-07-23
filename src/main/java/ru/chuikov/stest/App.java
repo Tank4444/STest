@@ -8,8 +8,9 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 
 @SpringBootApplication(exclude =
-        {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class, SecurityAutoConfiguration.class})
-public class App {
+        //{DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class, SecurityAutoConfiguration.class})
+        {SecurityAutoConfiguration.class})
+        public class App {
     public static void main(String[] args){
         SpringApplication.run(App.class,args);
     }
