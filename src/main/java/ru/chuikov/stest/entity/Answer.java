@@ -1,19 +1,16 @@
 package ru.chuikov.stest.entity;
 
 import lombok.Data;
+import ru.chuikov.stest.entity.utils.IdEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "answer")
 @Data
-public class Answer {
+public class Answer extends IdEntity {
     public Answer() {
     }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     @ManyToOne(optional = false,fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.PERSIST})
     @JoinColumn(name = "question_id",nullable = false)
@@ -42,13 +39,6 @@ public class Answer {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Question getQuestion() {
         return question;

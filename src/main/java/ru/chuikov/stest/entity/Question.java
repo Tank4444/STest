@@ -1,6 +1,7 @@
 package ru.chuikov.stest.entity;
 
 import lombok.Data;
+import ru.chuikov.stest.entity.utils.IdEntity;
 
 import javax.persistence.*;
 import java.util.List;
@@ -8,11 +9,8 @@ import java.util.List;
 @Entity
 @Table(name = "question")
 @Data
-public class Question {
+public class Question extends IdEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
 
     private String name;
 
@@ -24,14 +22,6 @@ public class Question {
     private List<Answer> answer;
 
     public Question() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

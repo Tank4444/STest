@@ -1,12 +1,9 @@
 package ru.chuikov.stest.service;
 
 import ru.chuikov.stest.entity.Question;
+import ru.chuikov.stest.service.utils.CommonService;
 
 import java.util.Optional;
 
-public interface QuestionService {
-        Optional<Question> getById(Long id);
-        boolean addQuestion(Question question);
-        boolean deleteQuestion(Question question);
-        boolean editQuestion(Question question);
+public interface QuestionService extends CommonService<Question> {
     }

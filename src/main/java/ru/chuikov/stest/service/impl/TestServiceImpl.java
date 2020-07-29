@@ -6,23 +6,22 @@ import ru.chuikov.stest.service.TestService;
 import java.util.Optional;
 
 public class TestServiceImpl implements TestService {
+
     @Override
-    public Optional<Test> getById(Long id) {
+    public void add(Test entity) {
+    }
+
+    @Override
+    public void delete(Test entity) {
+    }
+
+    @Override
+    public Optional<Test> get(Long entity) {
         return Optional.empty();
     }
 
     @Override
-    public boolean addTest(Test test) {
-        return false;
-    }
-
-    @Override
-    public boolean deleteTest(Test test) {
-        return false;
-    }
-
-    @Override
-    public boolean editTest(Test test) {
-        return false;
+    public Optional<Test> edit(Test entity) {
+        return Optional.empty();
     }
 }

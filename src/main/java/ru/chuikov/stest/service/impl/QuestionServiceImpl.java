@@ -6,23 +6,22 @@ import ru.chuikov.stest.service.QuestionService;
 import java.util.Optional;
 
 public class QuestionServiceImpl implements QuestionService {
+
     @Override
-    public Optional<Question> getById(Long id) {
+    public void add(Question entity) {
+    }
+
+    @Override
+    public void delete(Question entity) {
+    }
+
+    @Override
+    public Optional<Question> get(Long entity) {
         return Optional.empty();
     }
 
     @Override
-    public boolean addQuestion(Question question) {
-        return false;
-    }
-
-    @Override
-    public boolean deleteQuestion(Question question) {
-        return false;
-    }
-
-    @Override
-    public boolean editQuestion(Question question) {
-        return false;
+    public Optional<Question> edit(Question entity) {
+        return Optional.empty();
     }
 }

@@ -1,18 +1,16 @@
 package ru.chuikov.stest.entity;
 
 import lombok.Data;
+import ru.chuikov.stest.entity.utils.IdEntity;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
 
 @Entity(name = "user")
 @Table(name = "user")
 @Data
-public class User{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+public class User extends IdEntity {
+
     private String username;
     private String password;
 
@@ -23,20 +21,6 @@ public class User{
     private List<Test> tests;
 
     public User() {
-    }
-
-    public User(String username, String password, Role role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -63,8 +47,7 @@ public class User{
         this.role = role;
     }
 
-    public User(long id, String username, String password, Role role) {
-        this.id = id;
+    public User(String username, String password, Role role) {
         this.username = username;
         this.password = password;
         this.role = role;

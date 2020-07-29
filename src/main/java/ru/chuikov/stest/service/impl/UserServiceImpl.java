@@ -36,22 +36,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.findById(id);
     }
 
-    @Override
-    public void addUser(User user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole(Role.USER);
-        userRepository.saveAndFlush(user);
-    }
-
-    @Override
-    public void deleteUser(User user) {
-        userRepository.deleteByUsername(user.getUsername());
-    }
-
-    @Override
-    public void editUser(User user) {
-        userRepository.saveAndFlush(user);
-    }
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
@@ -71,4 +55,24 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
 
+    @Override
+    public void add(User entity) {
+        entity.setPassword(passwordEncoder.encode(entity.getPassword()));
+        entity.setRole(Role.USER);
+        userRepository.saveAndFlush(entity);
+    }
+
+    @Override
+    public void delete(User entity) {
+    }
+
+    @Override
+    public Optional<User> get(Long entity) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<User> edit(User entity) {
+        return Optional.empty();
+    }
 }
