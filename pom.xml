@@ -28,6 +28,7 @@
         <tomcat.jasper.version>9.0.37</tomcat.jasper.version>
         <lombok.version>1.18.12</lombok.version>
         <dbcp2.version>2.7.0</dbcp2.version>
+        <spring.security.taglib.version>5.3.3.RELEASE</spring.security.taglib.version>
     </properties>
 
     <dependencies>
@@ -107,6 +108,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <!-- spring-security-taglibs -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.taglib.version}</version>
         </dependency>
 
 

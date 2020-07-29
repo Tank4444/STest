@@ -4,12 +4,14 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 
 @Entity(name = "user")
 @Table(name = "user")
 @Data
 public class User{
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String username;
     private String password;
@@ -17,7 +19,16 @@ public class User{
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
+    private List<Test> tests;
+
     public User() {
+    }
+
+    public User(String username, String password, Role role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
     }
 
     public long getId() {
