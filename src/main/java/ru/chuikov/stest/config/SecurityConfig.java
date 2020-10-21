@@ -55,9 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // указываем URL логаута
                 .logoutUrl("/logout")
                 // указываем URL при удачном логауте
-                .logoutSuccessUrl("/login?logout")
+                .logoutSuccessUrl("/index?logout")
                 // делаем не валидной текущую сессию
                 .invalidateHttpSession(true);
+
 
         http.authorizeRequests().antMatchers("/","/index","/registration").permitAll();
         http.authorizeRequests().antMatchers("/test/**").permitAll();

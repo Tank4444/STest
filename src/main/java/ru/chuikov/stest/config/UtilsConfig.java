@@ -12,7 +12,7 @@ public class UtilsConfig {
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
     }
-    @Bean
+    //@Bean
     public UserDetailsService userDetailsService(){
         return new UserServiceImpl();
     }

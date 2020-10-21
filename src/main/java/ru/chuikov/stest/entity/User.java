@@ -13,6 +13,24 @@ public class User extends IdEntity {
 
     private String username;
     private String password;
+    @Transient
+    private String passwordConfirm;
+
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+
+    public List<Test> getTests() {
+        return tests;
+    }
+
+    public void setTests(List<Test> tests) {
+        this.tests = tests;
+    }
 
     @Enumerated(EnumType.STRING)
     private Role role;

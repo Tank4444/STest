@@ -4,6 +4,7 @@ import lombok.Data;
 import ru.chuikov.stest.entity.utils.IdEntity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "testing")
@@ -15,7 +16,6 @@ public class Testing extends IdEntity {
     @JoinColumn(name = "test_id",nullable = false)
     private Test idTest;
 
-    private String testAnswert;
 
 
     public Test getIdTest() {
@@ -26,16 +26,9 @@ public class Testing extends IdEntity {
         this.idTest = idTest;
     }
 
-    public String getTestAnswert() {
-        return testAnswert;
-    }
 
-    public void setTestAnswert(String testAnswert) {
-        this.testAnswert = testAnswert;
-    }
 
-    public Testing(Test idTest, String testAnswert) {
+    public Testing(Test idTest) {
         this.idTest = idTest;
-        this.testAnswert = testAnswert;
     }
 }

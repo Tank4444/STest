@@ -13,7 +13,6 @@ import ru.chuikov.stest.entity.User;
 import ru.chuikov.stest.repository.UserRepository;
 import ru.chuikov.stest.service.UserService;
 
-import javax.annotation.PostConstruct;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -73,6 +72,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public Optional<User> edit(User entity) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<List<User>> getAll() {
         return Optional.empty();
     }
 }

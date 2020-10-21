@@ -6,6 +6,7 @@ import ru.chuikov.stest.entity.Answer;
 import ru.chuikov.stest.repository.AnswerRepository;
 import ru.chuikov.stest.service.AnswerService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,6 +32,11 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Override
     public Optional<Answer> edit(Answer entity) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Optional<List<Answer>> getAll() {
         return Optional.empty();
     }
 }

@@ -1,17 +1,15 @@
 package ru.chuikov.stest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.chuikov.stest.entity.Role;
 import ru.chuikov.stest.entity.User;
 import ru.chuikov.stest.repository.UserRepository;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
+import java.util.Optional;
 
 
 @SpringBootApplication
@@ -29,6 +27,7 @@ import javax.annotation.PostConstruct;
 
     @PostConstruct
     private void addAdmin(){
-        userRepository.saveAndFlush(new User("admin",passwordEncoder.encode("admin"), Role.ADMIN));
+        List<User> users=userRepository.findByRole(Role.ADMIN);
+        if(users.isEmpty()) userRepository.saveAndFlush(new User("admin",passwordEncoder.encode("admin"), Role.ADMIN));
     }
 }
