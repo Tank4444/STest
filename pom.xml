@@ -23,7 +23,7 @@
         <sqlite.jdbc.version>3.32.3.1</sqlite.jdbc.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <jackson.version>2.11.1</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <javax.servlet.api.version>2.5</javax.servlet.api.version>
         <tomcat.jasper.version>9.0.37</tomcat.jasper.version>
         <lombok.version>1.18.12</lombok.version>
